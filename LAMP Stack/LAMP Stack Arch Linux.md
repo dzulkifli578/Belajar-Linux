@@ -2,8 +2,7 @@
 
 ## Update Repository dan Package
 ```bash
-sudo pacman -Syu
-sudo pacman -Syy
+sudo pacman -Syu && sudo pacman -Syy
 ```
 
 ## Install LAMP Stack
