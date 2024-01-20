@@ -69,4 +69,5 @@ FLUSH PRIVILEGES;
 
 ## Referensi
 https://www.ubuntumint.com/install-lamp-apache-mariadb-php-on-debian-12/
+
 https://stackoverflow.com/questions/36864206/sqlstatehy000-1698-access-denied-for-user-rootlocalhost
