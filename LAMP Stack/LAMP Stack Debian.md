@@ -1,27 +1,27 @@
-# instal LAMP Stack Debian
+# Instruksi Instalasi LAMP Stack Debian
 
-## update repository & upgrade package
+## Update Repository & Upgrade Package
 ```bash
 sudo apt update && sudo apt upgrade -y
 ```
 
-## install package yang diperlukan LAMP
+## Install Package yang Diperlukan LAMP
 ```bash
 sudo apt install apache2* ufw -y php libapache2-mod-php php-mysql -y
 ```
 
-## cek versi package masing-masing
+## Cek Versi Package Masing-Masing
 ```bash
 sudo apache2 -v
 mariadb -v
 php -v
 ```
 
-## cek info PHP
+## Cek Info PHP
 ```bash
 sudo nano /var/www/html/version.php
 ```
-### tulis kode PHP
+### Tulis Kode PHP
 ```bash
 <?php
     phpinfo ();
@@ -49,7 +49,7 @@ sudo systemctl enable mariadb
 sudo systemctl status mariadb 
 ```
 
-## mengamankan instalasi MySQL
+## Mengamankan Instalasi MySQL
 ```bash
 sudo mariadb-secure-installation
 ```
