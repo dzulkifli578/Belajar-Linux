@@ -54,32 +54,19 @@ sudo nano /var/www/html/version.php
 ?>
 ```
 ### c. Aktivasi Layanan Dependency LAMP Stack
-#### Aktivasi Apache
-```bash
-sudo systemctl start apache2
-sudo systemctl enable apache2
-sudo systemctl status apache2
-```
-#### Aktivasi UFW
+#### Aktivasi UFW Apache MySQL
 ```bash
 sudo ufw enable
 sudo ufw allow http
 sudo ufw status
-```
-#### Aktivasi MySQL
-```bash
-sudo systemctl start mariadb 
-sudo systemctl enable mariadb 
-sudo systemctl status mariadb 
+sudo systemctl start apache2 mariadb
+sudo systemctl enable apache2 mariadb
+sudo systemctl status apache2 mariadb
 ```
 ### d. Mengatur MySQL
 #### Mengamankan Instalasi MySQL
 ```bash
 sudo mariadb-secure-installation
-```
-#### Login ke MySQL
-```bash
-sudo mariadb
 ```
 #### Tambahkan User untuk Login PHPMyAdmin
 ```bash
@@ -87,6 +74,7 @@ sudo mariadb
 CREATE USER 'root'@'localhost' IDENTIFIED BY 'root';
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'root';
 FLUSH PRIVILEGES;
+QUIT;
 ```
 
 ## 2. Install WordPress
@@ -105,7 +93,7 @@ sudo chmod -R 755 /var/www/wordpress_user
 ### b. Konfigurasi MySQL untuk WordPress
 #### Buat Database untuk WordPress
 ```bash
-mysql -u root -p
+sudo mariadb
 CREATE DATABASE wordpress;
 FLUSH PRIVILEGES;
 QUIT;
